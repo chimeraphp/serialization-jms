@@ -1,21 +1,21 @@
 <?php
 declare(strict_types=1);
 
-namespace Lcobucci\Chimera\MessageCreator\JmsSerializer\Tests\Unit;
+namespace Chimera\MessageCreator\JmsSerializer\Tests\Unit;
 
+use Chimera\IdentifierGenerator;
+use Chimera\Input;
+use Chimera\MessageCreator\JmsSerializer\DeserializationContext;
+use Chimera\MessageCreator\JmsSerializer\InputDataInjector;
 use JMS\Serializer\DeserializationContext as BaseContext;
 use JMS\Serializer\EventDispatcher\Events;
 use JMS\Serializer\EventDispatcher\PreDeserializeEvent;
-use Lcobucci\Chimera\IdentifierGenerator;
-use Lcobucci\Chimera\Input;
-use Lcobucci\Chimera\MessageCreator\JmsSerializer\DeserializationContext;
-use Lcobucci\Chimera\MessageCreator\JmsSerializer\InputDataInjector;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use function assert;
 
 /**
- * @coversDefaultClass \Lcobucci\Chimera\MessageCreator\JmsSerializer\InputDataInjector
+ * @coversDefaultClass \Chimera\MessageCreator\JmsSerializer\InputDataInjector
  */
 final class InputDataInjectorTest extends TestCase
 {
@@ -49,7 +49,7 @@ final class InputDataInjectorTest extends TestCase
      *
      * @covers ::injectData()
      *
-     * @uses \Lcobucci\Chimera\MessageCreator\JmsSerializer\DeserializationContext
+     * @uses \Chimera\MessageCreator\JmsSerializer\DeserializationContext
      */
     public function injectDataShouldBeSkippedWhenContextIsNotTheExpectedOne(): void
     {
@@ -66,7 +66,7 @@ final class InputDataInjectorTest extends TestCase
      *
      * @covers ::injectData()
      *
-     * @uses \Lcobucci\Chimera\MessageCreator\JmsSerializer\DeserializationContext
+     * @uses \Chimera\MessageCreator\JmsSerializer\DeserializationContext
      */
     public function injectDataShouldBeSkippedWhenContextDepthIsNotOne(): void
     {
@@ -87,7 +87,7 @@ final class InputDataInjectorTest extends TestCase
      * @covers ::injectData()
      * @covers ::mergeData()
      *
-     * @uses \Lcobucci\Chimera\MessageCreator\JmsSerializer\DeserializationContext
+     * @uses \Chimera\MessageCreator\JmsSerializer\DeserializationContext
      */
     public function injectDataShouldNotAddAnythingWhenIdentifierAttributeIsNotConfigured(): void
     {
@@ -108,7 +108,7 @@ final class InputDataInjectorTest extends TestCase
      * @covers ::injectData()
      * @covers ::mergeData()
      *
-     * @uses \Lcobucci\Chimera\MessageCreator\JmsSerializer\DeserializationContext
+     * @uses \Chimera\MessageCreator\JmsSerializer\DeserializationContext
      */
     public function injectDataShouldAddGeneratedIdToData(): void
     {

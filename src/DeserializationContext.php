@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Lcobucci\Chimera\MessageCreator\JmsSerializer;
+namespace Chimera\MessageCreator\JmsSerializer;
 
+use Chimera\Input;
 use JMS\Serializer\DeserializationContext as BaseContext;
-use Lcobucci\Chimera\Input;
 
 final class DeserializationContext extends BaseContext
 {

@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Lcobucci\Chimera\MessageCreator\JmsSerializer\Tests\Functional;
+namespace Chimera\MessageCreator\JmsSerializer\Tests\Functional;
 
-use Lcobucci\Chimera\IdentifierGenerator;
-use Lcobucci\Chimera\Input;
+use Chimera\IdentifierGenerator;
+use Chimera\Input;
 
 final class FakeInput implements Input
 {

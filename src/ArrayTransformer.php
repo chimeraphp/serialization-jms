@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Lcobucci\Chimera\MessageCreator\JmsSerializer;
+namespace Chimera\MessageCreator\JmsSerializer;
 
+use Chimera\Input;
+use Chimera\MessageCreator;
 use JMS\Serializer\ArrayTransformerInterface;
-use Lcobucci\Chimera\Input;
-use Lcobucci\Chimera\MessageCreator;
 
 final class ArrayTransformer implements MessageCreator
 {

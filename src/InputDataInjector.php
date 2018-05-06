@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Lcobucci\Chimera\MessageCreator\JmsSerializer;
+namespace Chimera\MessageCreator\JmsSerializer;
 
+use Chimera\IdentifierGenerator;
+use Chimera\Input;
 use JMS\Serializer\EventDispatcher\PreDeserializeEvent;
-use Lcobucci\Chimera\IdentifierGenerator;
-use Lcobucci\Chimera\Input;
 
 final class InputDataInjector
 {

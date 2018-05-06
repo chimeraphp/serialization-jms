@@ -1,17 +1,17 @@
 <?php
 declare(strict_types=1);
 
-namespace Lcobucci\Chimera\MessageCreator\JmsSerializer\Tests\Unit;
+namespace Chimera\MessageCreator\JmsSerializer\Tests\Unit;
 
+use Chimera\Input;
+use Chimera\MessageCreator\JmsSerializer\ArrayTransformer;
+use Chimera\MessageCreator\JmsSerializer\DeserializationContext;
 use JMS\Serializer\ArrayTransformerInterface;
-use Lcobucci\Chimera\Input;
-use Lcobucci\Chimera\MessageCreator\JmsSerializer\ArrayTransformer;
-use Lcobucci\Chimera\MessageCreator\JmsSerializer\DeserializationContext;
 use PHPUnit\Framework\TestCase;
 use stdClass;
 
 /**
- * @coversDefaultClass \Lcobucci\Chimera\MessageCreator\JmsSerializer\ArrayTransformer
+ * @coversDefaultClass \Chimera\MessageCreator\JmsSerializer\ArrayTransformer
  */
 final class ArrayTransformerTest extends TestCase
 {
@@ -21,7 +21,7 @@ final class ArrayTransformerTest extends TestCase
      * @covers ::__construct()
      * @covers ::create()
      *
-     * @uses \Lcobucci\Chimera\MessageCreator\JmsSerializer\DeserializationContext
+     * @uses \Chimera\MessageCreator\JmsSerializer\DeserializationContext
      */
     public function createShouldReturnANewInstanceOfGivenMessageUsingTheInputData(): void
     {

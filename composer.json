@@ -16,7 +16,7 @@
     "require": {
         "php": "^7.2",
         "jms/serializer": "^1.11",
-        "lcobucci/chimera-foundation": "^1.0@rc"
+        "chimera/foundation": "^0.1"
     },
     "require-dev": {
         "doctrine/coding-standard": "^4.0",
@@ -30,12 +30,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Lcobucci\\Chimera\\MessageCreator\\JmsSerializer\\": "src"
+            "Chimera\\MessageCreator\\JmsSerializer\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Lcobucci\\Chimera\\MessageCreator\\JmsSerializer\\Tests\\": "tests"
+            "Chimera\\MessageCreator\\JmsSerializer\\Tests\\": "tests"
         }
     },
     "extra": {

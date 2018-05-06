@@ -1,15 +1,15 @@
 <?php
 declare(strict_types=1);
 
-namespace Lcobucci\Chimera\MessageCreator\JmsSerializer\Tests\Functional;
+namespace Chimera\MessageCreator\JmsSerializer\Tests\Functional;
 
+use Chimera\MessageCreator\JmsSerializer\ArrayTransformer;
+use Chimera\MessageCreator\JmsSerializer\InputDataInjector;
 use Doctrine\Common\Annotations\AnnotationRegistry;
 use JMS\Serializer\EventDispatcher\EventDispatcher;
 use JMS\Serializer\EventDispatcher\Events;
 use JMS\Serializer\Serializer;
 use JMS\Serializer\SerializerBuilder;
-use Lcobucci\Chimera\MessageCreator\JmsSerializer\ArrayTransformer;
-use Lcobucci\Chimera\MessageCreator\JmsSerializer\InputDataInjector;
 use PHPUnit\Framework\TestCase;
 use function assert;
 
@@ -46,9 +46,9 @@ final class MessageDeserializationTest extends TestCase
     /**
      * @test
      *
-     * @covers \Lcobucci\Chimera\MessageCreator\JmsSerializer\ArrayTransformer
-     * @covers \Lcobucci\Chimera\MessageCreator\JmsSerializer\InputDataInjector
-     * @covers \Lcobucci\Chimera\MessageCreator\JmsSerializer\DeserializationContext
+     * @covers \Chimera\MessageCreator\JmsSerializer\ArrayTransformer
+     * @covers \Chimera\MessageCreator\JmsSerializer\InputDataInjector
+     * @covers \Chimera\MessageCreator\JmsSerializer\DeserializationContext
      */
     public function inputDataShouldBeUsedOnDeserialization(): void
     {
@@ -63,9 +63,9 @@ final class MessageDeserializationTest extends TestCase
     /**
      * @test
      *
-     * @covers \Lcobucci\Chimera\MessageCreator\JmsSerializer\ArrayTransformer
-     * @covers \Lcobucci\Chimera\MessageCreator\JmsSerializer\InputDataInjector
-     * @covers \Lcobucci\Chimera\MessageCreator\JmsSerializer\DeserializationContext
+     * @covers \Chimera\MessageCreator\JmsSerializer\ArrayTransformer
+     * @covers \Chimera\MessageCreator\JmsSerializer\InputDataInjector
+     * @covers \Chimera\MessageCreator\JmsSerializer\DeserializationContext
      */
     public function generatedIdShouldBeUsedOnDeserialization(): void
     {
@@ -80,9 +80,9 @@ final class MessageDeserializationTest extends TestCase
     /**
      * @test
      *
-     * @covers \Lcobucci\Chimera\MessageCreator\JmsSerializer\ArrayTransformer
-     * @covers \Lcobucci\Chimera\MessageCreator\JmsSerializer\InputDataInjector
-     * @covers \Lcobucci\Chimera\MessageCreator\JmsSerializer\DeserializationContext
+     * @covers \Chimera\MessageCreator\JmsSerializer\ArrayTransformer
+     * @covers \Chimera\MessageCreator\JmsSerializer\InputDataInjector
+     * @covers \Chimera\MessageCreator\JmsSerializer\DeserializationContext
      */
     public function dataAndIdShouldBeUsedOnDeserialization(): void
     {

@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Lcobucci\Chimera\MessageCreator\JmsSerializer\Tests\Functional;
+namespace Chimera\MessageCreator\JmsSerializer\Tests\Functional;
 
+use Chimera\MessageCreator\JmsSerializer\InputDataInjector;
 use JMS\Serializer\Annotation as Serializer;
-use Lcobucci\Chimera\MessageCreator\JmsSerializer\InputDataInjector;
 
 final class DoSomething
 {
