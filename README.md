@@ -1,13 +1,13 @@
 # Chimera - serialization-jms
 
-[![Total Downloads](https://img.shields.io/packagist/dt/lcobucci/chimera-serialization-jms.svg?style=flat-square)](https://packagist.org/packages/lcobucci/chimera-serialization-jms)
-[![Latest Stable Version](https://img.shields.io/packagist/v/lcobucci/chimera-serialization-jms.svg?style=flat-square)](https://packagist.org/packages/lcobucci/chimera-serialization-jms)
-[![Unstable Version](https://img.shields.io/packagist/vpre/lcobucci/chimera-serialization-jms.svg?style=flat-square)](https://packagist.org/packages/lcobucci/chimera-serialization-jms)
+[![Total Downloads](https://img.shields.io/packagist/dt/chimera/serialization-jms.svg?style=flat-square)](https://packagist.org/packages/chimera/serialization-jms)
+[![Latest Stable Version](https://img.shields.io/packagist/v/chimera/serialization-jms.svg?style=flat-square)](https://packagist.org/packages/chimera/serialization-jms)
+[![Unstable Version](https://img.shields.io/packagist/vpre/chimera/serialization-jms.svg?style=flat-square)](https://packagist.org/packages/chimera/serialization-jms)
 
 ![Branch master](https://img.shields.io/badge/branch-master-brightgreen.svg?style=flat-square)
-[![Build Status](https://img.shields.io/travis/lcobucci/chimera-serialization-jms/master.svg?style=flat-square)](http://travis-ci.org/#!/lcobucci/chimera-serialization-jms)
-[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/lcobucci/chimera-serialization-jms/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/lcobucci/chimera-serialization-jms/?branch=master)
-[![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/lcobucci/chimera-serialization-jms/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/lcobucci/chimera-serialization-jms/?branch=master)
+[![Build Status](https://img.shields.io/travis/chimeraphp/serialization-jms/master.svg?style=flat-square)](http://travis-ci.org/#!/chimeraphp/serialization-jms)
+[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/chimeraphp/serialization-jms/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/chimeraphp/serialization-jms/?branch=master)
+[![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/chimeraphp/serialization-jms/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/chimeraphp/serialization-jms/?branch=master)
 
 > The term Chimera (_/kɪˈmɪərə/_ or _/kaɪˈmɪərə/_) has come to describe any
 mythical or fictional animal with parts taken from various animals, or to
@@ -30,11 +30,11 @@ the user input into a message to be handled.
 
 ## Installation
 
-Package is available on [Packagist](http://packagist.org/packages/lcobucci/chimera-serialization-jms),
+Package is available on [Packagist](http://packagist.org/packages/chimera/serialization-jms),
 you can install it using [Composer](http://getcomposer.org).
 
 ```shell
-composer require lcobucci/chimera-serialization-jms
+composer require chimera/serialization-jms
 ```
 
 ### PHP Configuration
@@ -61,12 +61,12 @@ declare(strict_types=1);
 
 namespace MyApp;
 
+use Chimera\ExecuteQuery;
+use Chimera\MessageCreator\JmsSerializer\ArrayTransformer;
+use Chimera\MessageCreator\JmsSerializer\InputDataInjector;
 use JMS\Serializer\EventDispatcher\EventDispatcher;
 use JMS\Serializer\EventDispatcher\Events;
 use JMS\Serializer\SerializerBuilder;
-use Lcobucci\Chimera\ExecuteQuery;
-use Lcobucci\Chimera\MessageCreator\JmsSerializer\ArrayTransformer;
-use Lcobucci\Chimera\MessageCreator\JmsSerializer\InputDataInjector;
 
 // First we need to have a JMS serializer instance with the event listener set
 
@@ -89,4 +89,4 @@ var_dump($result);
 
 ## License
 
-MIT, see [LICENSE file](https://github.com/lcobucci/chimera-foundation/blob/master/LICENSE).
+MIT, see [LICENSE file](https://github.com/chimeraphp/serialization-jms/blob/master/LICENSE).
