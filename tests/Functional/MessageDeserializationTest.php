@@ -35,7 +35,7 @@ final class MessageDeserializationTest extends TestCase
     {
         $injector = new InputDataInjector();
 
-        $addListeners = function (EventDispatcher $dispatcher) use ($injector): void {
+        $addListeners = static function (EventDispatcher $dispatcher) use ($injector): void {
             $dispatcher->addListener(Events::PRE_DESERIALIZE, [$injector, 'injectData']);
         };
 
