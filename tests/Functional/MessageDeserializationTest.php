@@ -6,17 +6,18 @@ namespace Chimera\MessageCreator\JmsSerializer\Tests\Functional;
 use Chimera\MessageCreator\JmsSerializer\ArrayTransformer;
 use Chimera\MessageCreator\JmsSerializer\InputDataInjector;
 use Doctrine\Common\Annotations\AnnotationRegistry;
+use JMS\Serializer\ArrayTransformerInterface;
 use JMS\Serializer\EventDispatcher\EventDispatcher;
 use JMS\Serializer\EventDispatcher\Events;
-use JMS\Serializer\Serializer;
 use JMS\Serializer\SerializerBuilder;
+use JMS\Serializer\SerializerInterface;
 use PHPUnit\Framework\TestCase;
 use function assert;
 
 final class MessageDeserializationTest extends TestCase
 {
     /**
-     * @var Serializer
+     * @var SerializerInterface
      */
     private $serializer;
 
@@ -35,7 +36,7 @@ final class MessageDeserializationTest extends TestCase
     {
         $injector = new InputDataInjector();
 
-        $addListeners = function (EventDispatcher $dispatcher) use ($injector): void {
+        $addListeners = static function (EventDispatcher $dispatcher) use ($injector): void {
             $dispatcher->addListener(Events::PRE_DESERIALIZE, [$injector, 'injectData']);
         };
 
@@ -101,6 +102,8 @@ final class MessageDeserializationTest extends TestCase
         array $data = [],
         ?string $generatedId = null
     ): DoSomething {
+        assert($this->serializer instanceof ArrayTransformerInterface);
+
         $creator = new ArrayTransformer($this->serializer);
         $message = $creator->create(DoSomething::class, new FakeInput($data, $generatedId));
         assert($message instanceof DoSomething);
