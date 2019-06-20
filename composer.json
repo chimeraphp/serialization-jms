@@ -19,7 +19,7 @@
         "chimera/foundation": "^0.3"
     },
     "require-dev": {
-        "infection/infection": "^0.12",
+        "infection/infection": "^0.13",
         "lcobucci/coding-standard": "^2.0",
         "phpstan/phpstan": "^0.11",
         "phpstan/phpstan-deprecation-rules": "^0.11",
