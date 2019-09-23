@@ -15,7 +15,7 @@
     },
     "require": {
         "php": "^7.3 || ^8.0",
-        "jms/serializer": "^3.0",
+        "jms/serializer": "^3.3",
         "chimera/foundation": "^0.3"
     },
     "require-dev": {
