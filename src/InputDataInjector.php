@@ -38,7 +38,7 @@ final class InputDataInjector
     {
         $generatedId = $input->getAttribute(IdentifierGenerator::class);
 
-        if ($generatedId !== null) {
+        if ($generatedId !== null && isset($data[$this->generatedProperty]) === false) {
             $data[$this->generatedProperty] = $generatedId;
         }
 

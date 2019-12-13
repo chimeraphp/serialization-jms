@@ -139,4 +139,20 @@ final class InputDataInjectorTest extends TestCase
 
         self::assertSame(['test' => 1, '_input.id' => 'abc123'], $this->event->getData());
     }
+
+    /**
+     * @test
+     */
+    public function injectDataShouldNotInjectAnythingIfThePropertyIsAlreadySet(): void
+    {
+        $this->input->expects(self::once())
+                    ->method('getAttribute')
+                    ->with(IdentifierGenerator::class)
+                    ->willReturn(4);
+
+        $listener = new InputDataInjector('test');
+        $listener->injectData($this->event);
+
+        self::assertSame(['test' => 1], $this->event->getData());
+    }
 }
