@@ -9,7 +9,12 @@ use JMS\Serializer\EventDispatcher\PreDeserializeEvent;
 
 final class InputDataInjector
 {
-    public const GENERATED_ID = '_input.id';
+    private $generatedProperty = '_input.id';
+
+    public function __construct(string $generatedProperty = '_input.id')
+    {
+        $this->generatedProperty = $generatedProperty;
+    }
 
     public function injectData(PreDeserializeEvent $event): void
     {
@@ -34,7 +39,7 @@ final class InputDataInjector
         $generatedId = $input->getAttribute(IdentifierGenerator::class);
 
         if ($generatedId !== null) {
-            $data[self::GENERATED_ID] = $generatedId;
+            $data[$this->generatedProperty] = $generatedId;
         }
 
         return $data;

@@ -19,7 +19,8 @@ use function assert;
  */
 final class InputDataInjectorTest extends TestCase
 {
-    private const DATA = ['test' => 1];
+    private const DATA     = ['test' => 1];
+    private const PROPERTY = 'id';
 
     /**
      * @var Input|MockObject
@@ -75,7 +76,7 @@ final class InputDataInjectorTest extends TestCase
 
         $context->increaseDepth();
 
-        $listener = new InputDataInjector();
+        $listener = new InputDataInjector(self::PROPERTY);
         $listener->injectData($this->event);
 
         self::assertSame(self::DATA, $this->event->getData());
@@ -117,9 +118,25 @@ final class InputDataInjectorTest extends TestCase
                     ->with(IdentifierGenerator::class)
                     ->willReturn('abc123');
 
+        $listener = new InputDataInjector(self::PROPERTY);
+        $listener->injectData($this->event);
+
+        self::assertSame(['test' => 1, self::PROPERTY => 'abc123'], $this->event->getData());
+    }
+
+    /**
+     * @test
+     */
+    public function injectDataShouldUseTheCorrectDefaultValueWhenAddingGeneratedIdToData(): void
+    {
+        $this->input->expects(self::once())
+                    ->method('getAttribute')
+                    ->with(IdentifierGenerator::class)
+                    ->willReturn('abc123');
+
         $listener = new InputDataInjector();
         $listener->injectData($this->event);
 
-        self::assertSame(['test' => 1, InputDataInjector::GENERATED_ID => 'abc123'], $this->event->getData());
+        self::assertSame(['test' => 1, '_input.id' => 'abc123'], $this->event->getData());
     }
 }
