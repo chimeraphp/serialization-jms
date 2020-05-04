@@ -5,7 +5,7 @@
 [![Unstable Version](https://img.shields.io/packagist/vpre/chimera/serialization-jms.svg?style=flat-square)](https://packagist.org/packages/chimera/serialization-jms)
 
 ![Branch master](https://img.shields.io/badge/branch-master-brightgreen.svg?style=flat-square)
-[![Build Status](https://img.shields.io/travis/chimeraphp/serialization-jms/master.svg?style=flat-square)](http://travis-ci.org/#!/chimeraphp/serialization-jms)
+[![Build Status](https://img.shields.io/travis/com/chimeraphp/serialization-jms/master.svg?style=flat-square)](http://travis-ci.com/chimeraphp/serialization-jms)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/chimeraphp/serialization-jms/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/chimeraphp/serialization-jms/?branch=master)
 [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/chimeraphp/serialization-jms/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/chimeraphp/serialization-jms/?branch=master)
 
