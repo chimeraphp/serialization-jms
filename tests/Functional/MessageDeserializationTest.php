@@ -5,7 +5,6 @@ namespace Chimera\MessageCreator\JmsSerializer\Tests\Functional;
 
 use Chimera\MessageCreator\JmsSerializer\ArrayTransformer;
 use Chimera\MessageCreator\JmsSerializer\InputDataInjector;
-use Doctrine\Common\Annotations\AnnotationRegistry;
 use JMS\Serializer\ArrayTransformerInterface;
 use JMS\Serializer\EventDispatcher\EventDispatcher;
 use JMS\Serializer\EventDispatcher\Events;
@@ -20,14 +19,6 @@ final class MessageDeserializationTest extends TestCase
      * @var SerializerInterface
      */
     private $serializer;
-
-    /**
-     * @beforeClass
-     */
-    public static function registerAutoloader(): void
-    {
-        AnnotationRegistry::registerUniqueLoader('class_exists');
-    }
 
     /**
      * @before
