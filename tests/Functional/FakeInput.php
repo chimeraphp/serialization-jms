@@ -11,12 +11,12 @@ final class FakeInput implements Input
     /**
      * @var mixed[]
      */
-    private $data;
+    private array $data;
 
     /**
      * @var mixed[]
      */
-    private $attributes = [];
+    private array $attributes = [];
 
     /**
      * @param mixed[] $data

@@ -11,25 +11,21 @@ final class DoSomething
     /**
      * @Serializer\Type("string")
      * @Serializer\SerializedName(InputDataInjector::GENERATED_ID)
-     * @var string|null
      */
-    public $id;
+    public ?string $id;
 
     /**
      * @Serializer\Type("string")
-     * @var string|null
      */
-    public $foo;
+    public ?string $foo;
 
     /**
      * @Serializer\Type("string")
-     * @var string|null
      */
-    public $bar;
+    public ?string $bar;
 
     /**
      * @Serializer\Type("string")
-     * @var string|null
      */
-    public $baz;
+    public ?string $baz;
 }

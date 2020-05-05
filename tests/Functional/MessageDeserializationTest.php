@@ -15,10 +15,7 @@ use function assert;
 
 final class MessageDeserializationTest extends TestCase
 {
-    /**
-     * @var SerializerInterface
-     */
-    private $serializer;
+    private SerializerInterface $serializer;
 
     /**
      * @before
@@ -46,7 +43,7 @@ final class MessageDeserializationTest extends TestCase
     {
         $message = $this->createMessage(['foo' => 'one', 'bar' => 'two', 'baz' => 'three']);
 
-        self::assertNull($message->id);
+        self::assertFalse(isset($message->id));
         self::assertSame('one', $message->foo);
         self::assertSame('two', $message->bar);
         self::assertSame('three', $message->baz);
@@ -64,9 +61,7 @@ final class MessageDeserializationTest extends TestCase
         $message = $this->createMessage([], '1234');
 
         self::assertSame('1234', $message->id);
-        self::assertNull($message->foo);
-        self::assertNull($message->bar);
-        self::assertNull($message->baz);
+        self::assertFalse(isset($message->foo, $message->bar, $message->baz));
     }
 
     /**
