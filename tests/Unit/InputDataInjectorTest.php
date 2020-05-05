@@ -22,14 +22,11 @@ final class InputDataInjectorTest extends TestCase
     private const DATA = ['test' => 1];
 
     /**
-     * @var Input|MockObject
+     * @var Input&MockObject
      */
-    private $input;
+    private Input $input;
 
-    /**
-     * @var PreDeserializeEvent
-     */
-    private $event;
+    private PreDeserializeEvent $event;
 
     /**
      * @before

@@ -8,10 +8,7 @@ use JMS\Serializer\DeserializationContext as BaseContext;
 
 final class DeserializationContext extends BaseContext
 {
-    /**
-     * @var Input
-     */
-    private $input;
+    private Input $input;
 
     public function __construct(Input $input)
     {

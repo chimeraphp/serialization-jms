@@ -9,19 +9,13 @@ use JMS\Serializer\ArrayTransformerInterface;
 
 final class ArrayTransformer implements MessageCreator
 {
-    /**
-     * @var ArrayTransformerInterface
-     */
-    private $transformer;
+    private ArrayTransformerInterface $transformer;
 
     public function __construct(ArrayTransformerInterface $transformer)
     {
         $this->transformer = $transformer;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function create(string $message, Input $input): object
     {
         return $this->transformer->fromArray(
