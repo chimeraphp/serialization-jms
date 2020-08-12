@@ -19,7 +19,7 @@
         "chimera/foundation": "^0.4@dev"
     },
     "require-dev": {
-        "doctrine/annotations": "^1.10.3",
+        "doctrine/annotations": "^1.10.4",
         "infection/infection": "^0.16",
         "lcobucci/coding-standard": "^4.0",
         "phpstan/extension-installer": "^1.0",
