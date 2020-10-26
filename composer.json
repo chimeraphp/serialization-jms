@@ -19,7 +19,7 @@
         "jms/serializer": "^3.9"
     },
     "require-dev": {
-        "doctrine/annotations": "^1.10.3",
+        "doctrine/annotations": "^1.11",
         "infection/infection": "^0.16",
         "lcobucci/coding-standard": "^6.0",
         "phpstan/extension-installer": "^1.0",
