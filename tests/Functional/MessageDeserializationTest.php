@@ -9,14 +9,11 @@ use JMS\Serializer\ArrayTransformerInterface;
 use JMS\Serializer\EventDispatcher\EventDispatcher;
 use JMS\Serializer\EventDispatcher\Events;
 use JMS\Serializer\SerializerBuilder;
-use JMS\Serializer\SerializerInterface;
 use PHPUnit\Framework\TestCase;
-
-use function assert;
 
 final class MessageDeserializationTest extends TestCase
 {
-    private SerializerInterface $serializer;
+    private ArrayTransformerInterface $serializer;
 
     /** @before */
     public function createSerializer(): void
@@ -85,12 +82,8 @@ final class MessageDeserializationTest extends TestCase
         array $data = [],
         ?string $generatedId = null
     ): DoSomething {
-        assert($this->serializer instanceof ArrayTransformerInterface);
-
         $creator = new ArrayTransformer($this->serializer);
-        $message = $creator->create(DoSomething::class, new FakeInput($data, $generatedId));
-        assert($message instanceof DoSomething);
 
-        return $message;
+        return $creator->create(DoSomething::class, new FakeInput($data, $generatedId));
     }
 }

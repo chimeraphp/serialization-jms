@@ -38,7 +38,6 @@ final class ArrayTransformerTest extends TestCase
         $creator = new ArrayTransformer($transformer);
         $message = $creator->create(stdClass::class, $input);
 
-        self::assertInstanceOf(stdClass::class, $message);
         self::assertSame(1, $message->test);
     }
 }
