@@ -6,7 +6,7 @@
     "logs": {
         "text": "infection.log"
     },
-    "minMsi": 71.43,
-    "minCoveredMsi": 71.43,
+    "minMsi": 100,
+    "minCoveredMsi": 100,
     "testFrameworkOptions": "--testsuite=unit"
 }

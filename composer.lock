@@ -68,12 +68,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/chimeraphp/foundation.git",
-                "reference": "fdf07d2c2ae62d5d7b5a11588a2ba53a5e711deb"
+                "reference": "df5432092d2ed20b8258dbdb0f64a219d1baed53"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chimeraphp/foundation/zipball/fdf07d2c2ae62d5d7b5a11588a2ba53a5e711deb",
-                "reference": "fdf07d2c2ae62d5d7b5a11588a2ba53a5e711deb",
+                "url": "https://api.github.com/repos/chimeraphp/foundation/zipball/df5432092d2ed20b8258dbdb0f64a219d1baed53",
+                "reference": "df5432092d2ed20b8258dbdb0f64a219d1baed53",
                 "shasum": ""
             },
             "require": {
@@ -127,7 +127,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2020-10-26T03:30:52+00:00"
+            "time": "2020-10-26T21:30:16+00:00"
         },
         {
             "name": "doctrine/annotations",

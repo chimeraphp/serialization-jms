@@ -6,6 +6,7 @@ namespace Chimera\MessageCreator\JmsSerializer;
 use Chimera\Input;
 use JMS\Serializer\DeserializationContext as BaseContext;
 
+/** @deprecated */
 final class DeserializationContext extends BaseContext
 {
     private Input $input;
