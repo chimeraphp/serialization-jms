@@ -22,5 +22,6 @@ final class DeserializationContextTest extends TestCase
         $context = new DeserializationContext($input);
 
         self::assertSame($input, $context->getInput());
+        self::assertTrue($context->getMetadataStack()->isEmpty());
     }
 }
