@@ -5,21 +5,24 @@ namespace Chimera\MessageCreator\JmsSerializer;
 
 use Chimera\Input;
 use Chimera\MessageCreator;
+use Chimera\MessageCreator\InputExtractor;
 use JMS\Serializer\ArrayTransformerInterface;
 
 final class ArrayTransformer implements MessageCreator
 {
     private ArrayTransformerInterface $transformer;
+    private InputExtractor $extractor;
 
-    public function __construct(ArrayTransformerInterface $transformer)
+    public function __construct(ArrayTransformerInterface $transformer, InputExtractor $extractor)
     {
         $this->transformer = $transformer;
+        $this->extractor   = $extractor;
     }
 
     public function create(string $message, Input $input): object
     {
         return $this->transformer->fromArray(
-            $input->getData(),
+            $this->extractor->extractData($input),
             $message,
             new DeserializationContext($input)
         );

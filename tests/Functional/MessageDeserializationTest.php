@@ -3,38 +3,19 @@ declare(strict_types=1);
 
 namespace Chimera\MessageCreator\JmsSerializer\Tests\Functional;
 
+use Chimera\MessageCreator\InputExtractor\AppendGeneratedIdentifier;
+use Chimera\MessageCreator\InputExtractor\UseInputData;
 use Chimera\MessageCreator\JmsSerializer\ArrayTransformer;
-use Chimera\MessageCreator\JmsSerializer\InputDataInjector;
-use JMS\Serializer\ArrayTransformerInterface;
-use JMS\Serializer\EventDispatcher\EventDispatcher;
-use JMS\Serializer\EventDispatcher\Events;
 use JMS\Serializer\SerializerBuilder;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @covers \Chimera\MessageCreator\JmsSerializer\ArrayTransformer
+ * @covers \Chimera\MessageCreator\JmsSerializer\DeserializationContext
+ */
 final class MessageDeserializationTest extends TestCase
 {
-    private ArrayTransformerInterface $serializer;
-
-    /** @before */
-    public function createSerializer(): void
-    {
-        $injector = new InputDataInjector();
-
-        $addListeners = static function (EventDispatcher $dispatcher) use ($injector): void {
-            $dispatcher->addListener(Events::PRE_DESERIALIZE, [$injector, 'injectData']);
-        };
-
-        $this->serializer = SerializerBuilder::create()->configureListeners($addListeners)
-                                                       ->build();
-    }
-
-    /**
-     * @test
-     *
-     * @covers \Chimera\MessageCreator\JmsSerializer\ArrayTransformer
-     * @covers \Chimera\MessageCreator\JmsSerializer\InputDataInjector
-     * @covers \Chimera\MessageCreator\JmsSerializer\DeserializationContext
-     */
+    /** @test */
     public function inputDataShouldBeUsedOnDeserialization(): void
     {
         $message = $this->createMessage(['foo' => 'one', 'bar' => 'two', 'baz' => 'three']);
@@ -45,13 +26,7 @@ final class MessageDeserializationTest extends TestCase
         self::assertSame('three', $message->baz);
     }
 
-    /**
-     * @test
-     *
-     * @covers \Chimera\MessageCreator\JmsSerializer\ArrayTransformer
-     * @covers \Chimera\MessageCreator\JmsSerializer\InputDataInjector
-     * @covers \Chimera\MessageCreator\JmsSerializer\DeserializationContext
-     */
+    /** @test */
     public function generatedIdShouldBeUsedOnDeserialization(): void
     {
         $message = $this->createMessage([], '1234');
@@ -60,13 +35,7 @@ final class MessageDeserializationTest extends TestCase
         self::assertFalse(isset($message->foo, $message->bar, $message->baz));
     }
 
-    /**
-     * @test
-     *
-     * @covers \Chimera\MessageCreator\JmsSerializer\ArrayTransformer
-     * @covers \Chimera\MessageCreator\JmsSerializer\InputDataInjector
-     * @covers \Chimera\MessageCreator\JmsSerializer\DeserializationContext
-     */
+    /** @test */
     public function dataAndIdShouldBeUsedOnDeserialization(): void
     {
         $message = $this->createMessage(['foo' => 'one', 'bar' => 'two', 'baz' => 'three'], '1234');
@@ -82,7 +51,10 @@ final class MessageDeserializationTest extends TestCase
         array $data = [],
         ?string $generatedId = null
     ): DoSomething {
-        $creator = new ArrayTransformer($this->serializer);
+        $creator = new ArrayTransformer(
+            SerializerBuilder::create()->build(),
+            new AppendGeneratedIdentifier(new UseInputData())
+        );
 
         return $creator->create(DoSomething::class, new FakeInput($data, $generatedId));
     }

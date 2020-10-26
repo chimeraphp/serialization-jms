@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace Chimera\MessageCreator\JmsSerializer\Tests\Unit;
 
 use Chimera\Input;
+use Chimera\MessageCreator\InputExtractor\UseInputData;
 use Chimera\MessageCreator\JmsSerializer\ArrayTransformer;
 use Chimera\MessageCreator\JmsSerializer\DeserializationContext;
 use JMS\Serializer\ArrayTransformerInterface;
@@ -35,7 +36,7 @@ final class ArrayTransformerTest extends TestCase
                     ->with($data, stdClass::class, new DeserializationContext($input))
                     ->willReturn((object) $data);
 
-        $creator = new ArrayTransformer($transformer);
+        $creator = new ArrayTransformer($transformer, new UseInputData());
         $message = $creator->create(stdClass::class, $input);
 
         self::assertSame(1, $message->test);
