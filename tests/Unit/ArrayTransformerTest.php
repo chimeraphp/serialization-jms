@@ -10,9 +10,7 @@ use JMS\Serializer\ArrayTransformerInterface;
 use PHPUnit\Framework\TestCase;
 use stdClass;
 
-/**
- * @coversDefaultClass \Chimera\MessageCreator\JmsSerializer\ArrayTransformer
- */
+/** @coversDefaultClass \Chimera\MessageCreator\JmsSerializer\ArrayTransformer */
 final class ArrayTransformerTest extends TestCase
 {
     /**

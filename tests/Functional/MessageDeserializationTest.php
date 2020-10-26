@@ -11,15 +11,14 @@ use JMS\Serializer\EventDispatcher\Events;
 use JMS\Serializer\SerializerBuilder;
 use JMS\Serializer\SerializerInterface;
 use PHPUnit\Framework\TestCase;
+
 use function assert;
 
 final class MessageDeserializationTest extends TestCase
 {
     private SerializerInterface $serializer;
 
-    /**
-     * @before
-     */
+    /** @before */
     public function createSerializer(): void
     {
         $injector = new InputDataInjector();
@@ -81,9 +80,7 @@ final class MessageDeserializationTest extends TestCase
         self::assertSame('three', $message->baz);
     }
 
-    /**
-     * @param mixed[] $data
-     */
+    /** @param mixed[] $data */
     private function createMessage(
         array $data = [],
         ?string $generatedId = null

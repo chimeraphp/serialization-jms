@@ -15,19 +15,19 @@
     },
     "require": {
         "php": "^7.4 || ^8.0",
-        "jms/serializer": "^3.8",
-        "chimera/foundation": "^0.4@dev"
+        "chimera/foundation": "^0.4@dev",
+        "jms/serializer": "^3.9"
     },
     "require-dev": {
-        "doctrine/annotations": "^1.10.3",
-        "infection/infection": "^0.16",
-        "lcobucci/coding-standard": "^4.0",
+        "doctrine/annotations": "^1.11",
+        "infection/infection": "^0.18",
+        "lcobucci/coding-standard": "^6.0",
         "phpstan/extension-installer": "^1.0",
         "phpstan/phpstan": "^0.12",
         "phpstan/phpstan-deprecation-rules": "^0.12",
         "phpstan/phpstan-phpunit": "^0.12",
         "phpstan/phpstan-strict-rules": "^0.12",
-        "phpunit/phpunit": "^9.1"
+        "phpunit/phpunit": "^9.4"
     },
     "provide": {
         "chimera/serialization-implementation": "0.4.0"

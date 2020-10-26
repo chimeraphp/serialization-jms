@@ -4,6 +4,9 @@
         "directories": ["src"]
     },
     "logs": {
-        "text": "infection-log.txt"
-    }
+        "text": "infection.log"
+    },
+    "minMsi": 71.43,
+    "minCoveredMsi": 71.43,
+    "testFrameworkOptions": "--testsuite=unit"
 }

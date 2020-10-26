@@ -12,25 +12,20 @@ use JMS\Serializer\EventDispatcher\Events;
 use JMS\Serializer\EventDispatcher\PreDeserializeEvent;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+
 use function assert;
 
-/**
- * @coversDefaultClass \Chimera\MessageCreator\JmsSerializer\InputDataInjector
- */
+/** @coversDefaultClass \Chimera\MessageCreator\JmsSerializer\InputDataInjector */
 final class InputDataInjectorTest extends TestCase
 {
     private const DATA = ['test' => 1];
 
-    /**
-     * @var Input&MockObject
-     */
+    /** @var Input&MockObject */
     private Input $input;
 
     private PreDeserializeEvent $event;
 
-    /**
-     * @before
-     */
+    /** @before */
     public function createInput(): void
     {
         $this->input = $this->createMock(Input::class);

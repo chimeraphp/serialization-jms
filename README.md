@@ -1,13 +1,11 @@
 # Chimera - serialization-jms
 
-[![Total Downloads](https://img.shields.io/packagist/dt/chimera/serialization-jms.svg?style=flat-square)](https://packagist.org/packages/chimera/serialization-jms)
-[![Latest Stable Version](https://img.shields.io/packagist/v/chimera/serialization-jms.svg?style=flat-square)](https://packagist.org/packages/chimera/serialization-jms)
-[![Unstable Version](https://img.shields.io/packagist/vpre/chimera/serialization-jms.svg?style=flat-square)](https://packagist.org/packages/chimera/serialization-jms)
+[![Total Downloads]](https://packagist.org/packages/chimera/serialization-jms)
+[![Latest Stable Version]](https://packagist.org/packages/chimera/serialization-jms)
+[![Unstable Version]](https://packagist.org/packages/chimera/serialization-jms)
 
-![Branch master](https://img.shields.io/badge/branch-master-brightgreen.svg?style=flat-square)
-[![Build Status](https://img.shields.io/travis/com/chimeraphp/serialization-jms/master.svg?style=flat-square)](http://travis-ci.com/chimeraphp/serialization-jms)
-[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/chimeraphp/serialization-jms/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/chimeraphp/serialization-jms/?branch=master)
-[![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/chimeraphp/serialization-jms/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/chimeraphp/serialization-jms/?branch=master)
+[![Build Status]](https://github.com/chimeraphp/serialization-jms/actions?query=workflow%3A%22PHPUnit%20Tests%22+branch%3Amaster)
+[![Code Coverage]](https://codecov.io/gh/chimeraphp/serialization-jms)
 
 > The term Chimera (_/kɪˈmɪərə/_ or _/kaɪˈmɪərə/_) has come to describe any
 mythical or fictional animal with parts taken from various animals, or to
@@ -30,8 +28,7 @@ the user input into a message to be handled.
 
 ## Installation
 
-Package is available on [Packagist](http://packagist.org/packages/chimera/serialization-jms),
-you can install it using [Composer](http://getcomposer.org).
+Package is available on [Packagist], you can install it using [Composer].
 
 ```shell
 composer require chimera/serialization-jms
@@ -89,4 +86,13 @@ var_dump($result);
 
 ## License
 
-MIT, see [LICENSE file](https://github.com/chimeraphp/serialization-jms/blob/master/LICENSE).
+MIT, see [LICENSE].
+
+[Total Downloads]: https://img.shields.io/packagist/dt/chimera/serialization-jms.svg?style=flat-square
+[Latest Stable Version]: https://img.shields.io/packagist/v/chimera/serialization-jms.svg?style=flat-square
+[Unstable Version]: https://img.shields.io/packagist/vpre/chimera/serialization-jms.svg?style=flat-square
+[Build Status]: https://img.shields.io/github/workflow/status/chimeraphp/serialization-jms/PHPUnit%20tests/master?style=flat-square
+[Code Coverage]: https://codecov.io/gh/chimeraphp/serialization-jms/branch/master/graph/badge.svg
+[Packagist]: http://packagist.org/packages/chimera/serialization-jms
+[Composer]: http://getcomposer.org
+[LICENSE]: LICENSE
