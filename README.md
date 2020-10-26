@@ -50,7 +50,7 @@ Check the documentation for more information: https://secure.php.net/manual/en/f
 
 ## Usage
 
-It's quite simple to use the `ArrayTransformer` as a `MessageCreator`:
+This is how you can use the `ArrayTransformer` as a `MessageCreator`:
 
 ```php
 <?php
@@ -59,25 +59,18 @@ declare(strict_types=1);
 namespace MyApp;
 
 use Chimera\ExecuteQuery;
+use Chimera\MessageCreator\InputExtractor\AppendGeneratedIdentifier;
+use Chimera\MessageCreator\InputExtractor\UseInputData;
 use Chimera\MessageCreator\JmsSerializer\ArrayTransformer;
-use Chimera\MessageCreator\JmsSerializer\InputDataInjector;
-use JMS\Serializer\EventDispatcher\EventDispatcher;
-use JMS\Serializer\EventDispatcher\Events;
 use JMS\Serializer\SerializerBuilder;
 
-// First we need to have a JMS serializer instance with the event listener set
+// We instantiate it passing a valid JMS serialiser
+$messageCreator = new ArrayTransformer(
+    SerializerBuilder::create()->build(),
+    new AppendGeneratedIdentifier(new UseInputData())
+);
 
-$addListeners = function (EventDispatcher $dispatcher): void {
-    $dispatcher->addListener(Events::PRE_DESERIALIZE, [new InputDataInjector(), 'injectData']);
-};
-
-$serializer = SerializerBuilder::create()->configureListeners($addListeners)
-                                         ->build();
-
-// Then instantiate the `ArrayTransformer`
-$messageCreator = new ArrayTransformer($serializer);
-
-// And finally use it on the actions
+// Then use it on the actions
 $action = new ExecuteQuery($queryBus, $messageCreator, MyQuery::class); // considering that $queryBus is a valid instance of `ServiceBus`
 $result = $action->fetch($input); // considering that $input is a valid instance of `Input`
 
