@@ -7,9 +7,7 @@ use Chimera\Input;
 use Chimera\MessageCreator\JmsSerializer\DeserializationContext;
 use PHPUnit\Framework\TestCase;
 
-/**
- * @coversDefaultClass \Chimera\MessageCreator\JmsSerializer\DeserializationContext
- */
+/** @coversDefaultClass \Chimera\MessageCreator\JmsSerializer\DeserializationContext */
 final class DeserializationContextTest extends TestCase
 {
     /**

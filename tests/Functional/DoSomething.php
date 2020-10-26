@@ -14,18 +14,12 @@ final class DoSomething
      */
     public ?string $id;
 
-    /**
-     * @Serializer\Type("string")
-     */
+    /** @Serializer\Type("string") */
     public ?string $foo;
 
-    /**
-     * @Serializer\Type("string")
-     */
+    /** @Serializer\Type("string") */
     public ?string $bar;
 
-    /**
-     * @Serializer\Type("string")
-     */
+    /** @Serializer\Type("string") */
     public ?string $baz;
 }
