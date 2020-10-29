@@ -64,12 +64,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/chimeraphp/foundation.git",
-                "reference": "2cd3760be9b10272ffe330264d77993a06c1128e"
+                "reference": "051807801793a7c84933025eb708e68d8b03f4de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chimeraphp/foundation/zipball/2cd3760be9b10272ffe330264d77993a06c1128e",
-                "reference": "2cd3760be9b10272ffe330264d77993a06c1128e",
+                "url": "https://api.github.com/repos/chimeraphp/foundation/zipball/051807801793a7c84933025eb708e68d8b03f4de",
+                "reference": "051807801793a7c84933025eb708e68d8b03f4de",
                 "shasum": ""
             },
             "require": {
@@ -77,7 +77,7 @@
                 "ramsey/uuid": "^4.1"
             },
             "require-dev": {
-                "infection/infection": "^0.18",
+                "infection/infection": "^0.19",
                 "lcobucci/coding-standard": "^6.0",
                 "phpstan/extension-installer": "^1.0",
                 "phpstan/phpstan": "^0.12",
@@ -118,7 +118,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2020-10-28T09:03:12+00:00"
+            "time": "2020-10-28T19:03:23+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -4465,16 +4465,16 @@
         },
         {
             "name": "symfony/string",
-            "version": "v5.1.7",
+            "version": "v5.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/string.git",
-                "reference": "4a9afe9d07bac506f75bcee8ed3ce76da5a9343e"
+                "reference": "a97573e960303db71be0dd8fda9be3bca5e0feea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/string/zipball/4a9afe9d07bac506f75bcee8ed3ce76da5a9343e",
-                "reference": "4a9afe9d07bac506f75bcee8ed3ce76da5a9343e",
+                "url": "https://api.github.com/repos/symfony/string/zipball/a97573e960303db71be0dd8fda9be3bca5e0feea",
+                "reference": "a97573e960303db71be0dd8fda9be3bca5e0feea",
                 "shasum": ""
             },
             "require": {
@@ -4492,11 +4492,6 @@
                 "symfony/var-exporter": "^4.4|^5.0"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "5.1-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Symfony\\Component\\String\\": ""
@@ -4546,7 +4541,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-09-15T12:23:47+00:00"
+            "time": "2020-10-24T12:01:57+00:00"
         },
         {
             "name": "thecodingmachine/safe",
