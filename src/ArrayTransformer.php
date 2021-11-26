@@ -16,6 +16,7 @@ final class ArrayTransformer implements MessageCreator
 
     public function create(string $message, Input $input): object
     {
+        // @phpstan-ignore-next-line
         return $this->transformer->fromArray(
             $this->extractor->extractData($input),
             $message,
