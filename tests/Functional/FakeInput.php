@@ -26,10 +26,7 @@ final class FakeInput implements Input
         $this->attributes[IdentifierGenerator::class] = $generatedId;
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function getAttribute(string $name, $default = null)
+    public function getAttribute(string $name, mixed $default = null): mixed
     {
         return $this->attributes[$name] ?? $default;
     }
