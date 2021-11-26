@@ -10,21 +10,17 @@ use JMS\Serializer\ArrayTransformerInterface;
 
 final class ArrayTransformer implements MessageCreator
 {
-    private ArrayTransformerInterface $transformer;
-    private InputExtractor $extractor;
-
-    public function __construct(ArrayTransformerInterface $transformer, InputExtractor $extractor)
+    public function __construct(private ArrayTransformerInterface $transformer, private InputExtractor $extractor)
     {
-        $this->transformer = $transformer;
-        $this->extractor   = $extractor;
     }
 
     public function create(string $message, Input $input): object
     {
+        // @phpstan-ignore-next-line
         return $this->transformer->fromArray(
             $this->extractor->extractData($input),
             $message,
-            new DeserializationContext($input)
+            new DeserializationContext($input),
         );
     }
 }

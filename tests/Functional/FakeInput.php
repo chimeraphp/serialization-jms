@@ -9,16 +9,11 @@ use Chimera\Input;
 final class FakeInput implements Input
 {
     /** @var mixed[] */
-    private array $data;
-
-    /** @var mixed[] */
     private array $attributes = [];
 
     /** @param mixed[] $data */
-    public function __construct(array $data, ?string $generatedId = null)
+    public function __construct(private array $data, ?string $generatedId = null)
     {
-        $this->data = $data;
-
         if ($generatedId === null) {
             return;
         }
@@ -26,10 +21,7 @@ final class FakeInput implements Input
         $this->attributes[IdentifierGenerator::class] = $generatedId;
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function getAttribute(string $name, $default = null)
+    public function getAttribute(string $name, mixed $default = null): mixed
     {
         return $this->attributes[$name] ?? $default;
     }
