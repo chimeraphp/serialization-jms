@@ -9,13 +9,9 @@ use JMS\Serializer\DeserializationContext as BaseContext;
 /** @deprecated */
 final class DeserializationContext extends BaseContext
 {
-    private Input $input;
-
-    public function __construct(Input $input)
+    public function __construct(private Input $input)
     {
         parent::__construct();
-
-        $this->input = $input;
     }
 
     public function getInput(): Input

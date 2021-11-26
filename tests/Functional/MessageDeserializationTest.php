@@ -49,11 +49,11 @@ final class MessageDeserializationTest extends TestCase
     /** @param mixed[] $data */
     private function createMessage(
         array $data = [],
-        ?string $generatedId = null
+        ?string $generatedId = null,
     ): DoSomething {
         $creator = new ArrayTransformer(
             SerializerBuilder::create()->build(),
-            new AppendGeneratedIdentifier(new UseInputData())
+            new AppendGeneratedIdentifier(new UseInputData()),
         );
 
         return $creator->create(DoSomething::class, new FakeInput($data, $generatedId));
