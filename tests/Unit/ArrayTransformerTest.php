@@ -6,7 +6,6 @@ namespace Chimera\MessageCreator\JmsSerializer\Tests\Unit;
 use Chimera\Input;
 use Chimera\MessageCreator\InputExtractor\UseInputData;
 use Chimera\MessageCreator\JmsSerializer\ArrayTransformer;
-use Chimera\MessageCreator\JmsSerializer\DeserializationContext;
 use JMS\Serializer\ArrayTransformerInterface;
 use PHPUnit\Framework\TestCase;
 use stdClass;
@@ -19,8 +18,6 @@ final class ArrayTransformerTest extends TestCase
      *
      * @covers ::__construct()
      * @covers ::create()
-     *
-     * @uses \Chimera\MessageCreator\JmsSerializer\DeserializationContext
      */
     public function createShouldReturnANewInstanceOfGivenMessageUsingTheInputData(): void
     {
@@ -33,7 +30,7 @@ final class ArrayTransformerTest extends TestCase
 
         $transformer->expects(self::once())
                     ->method('fromArray')
-                    ->with($data, stdClass::class, new DeserializationContext($input))
+                    ->with($data, stdClass::class)
                     ->willReturn((object) $data);
 
         $creator = new ArrayTransformer($transformer, new UseInputData());

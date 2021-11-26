@@ -9,10 +9,7 @@ use Chimera\MessageCreator\JmsSerializer\ArrayTransformer;
 use JMS\Serializer\SerializerBuilder;
 use PHPUnit\Framework\TestCase;
 
-/**
- * @covers \Chimera\MessageCreator\JmsSerializer\ArrayTransformer
- * @covers \Chimera\MessageCreator\JmsSerializer\DeserializationContext
- */
+/** @covers \Chimera\MessageCreator\JmsSerializer\ArrayTransformer */
 final class MessageDeserializationTest extends TestCase
 {
     /** @test */
