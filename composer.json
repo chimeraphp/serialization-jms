@@ -12,7 +12,7 @@
     "require": {
         "php": "^8.0",
         "chimera/foundation": "^0.5.x-dev",
-        "jms/serializer": "^3.11"
+        "jms/serializer": "^3.16"
     },
     "provide": {
         "chimera/serialization-implementation": "0.4.0"
