@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9d2709939fc00492351e3f5d25049d85",
+    "content-hash": "d38928ded7be63e80135a5bca4ee0bb0",
     "packages": [
         {
             "name": "brick/math",
@@ -68,27 +68,27 @@
         },
         {
             "name": "chimera/foundation",
-            "version": "0.5.x-dev",
+            "version": "1.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/chimeraphp/foundation.git",
-                "reference": "2c3da4e542cee79ed068326cf6486e368c9a76c1"
+                "reference": "81e914a81fc1072f8475a628c9fa84c649fd43bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chimeraphp/foundation/zipball/2c3da4e542cee79ed068326cf6486e368c9a76c1",
-                "reference": "2c3da4e542cee79ed068326cf6486e368c9a76c1",
+                "url": "https://api.github.com/repos/chimeraphp/foundation/zipball/81e914a81fc1072f8475a628c9fa84c649fd43bb",
+                "reference": "81e914a81fc1072f8475a628c9fa84c649fd43bb",
                 "shasum": ""
             },
             "require": {
-                "php": "^8.0",
+                "php": "^8.1",
                 "ramsey/uuid": "^4.2"
             },
             "require-dev": {
-                "infection/infection": "^0.25",
+                "infection/infection": "^0.26",
                 "lcobucci/coding-standard": "^8.0",
                 "phpstan/extension-installer": "^1.1",
-                "phpstan/phpstan": "^1.2",
+                "phpstan/phpstan": "^1.4",
                 "phpstan/phpstan-deprecation-rules": "^1.0",
                 "phpstan/phpstan-phpunit": "^1.0",
                 "phpstan/phpstan-strict-rules": "^1.0",
@@ -114,7 +114,7 @@
             "description": "Base structure to connect PSR-7 objects to command and query buses",
             "support": {
                 "issues": "https://github.com/chimeraphp/foundation/issues",
-                "source": "https://github.com/chimeraphp/foundation/tree/0.5.x"
+                "source": "https://github.com/chimeraphp/foundation/tree/1.0.x"
             },
             "funding": [
                 {
@@ -126,7 +126,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2021-11-26T20:01:16+00:00"
+            "time": "2022-03-14T18:11:15+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -745,12 +745,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Ramsey\\Uuid\\": "src/"
-                },
                 "files": [
                     "src/functions.php"
-                ]
+                ],
+                "psr-4": {
+                    "Ramsey\\Uuid\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -812,12 +812,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Ctype\\": ""
-                },
                 "files": [
                     "bootstrap.php"
-                ]
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Ctype\\": ""
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -971,12 +971,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Php81\\": ""
-                },
                 "files": [
                     "bootstrap.php"
                 ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Php81\\": ""
+                },
                 "classmap": [
                     "Resources/stubs"
                 ]
@@ -3117,12 +3117,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Pipeline\\": "src/"
-                },
                 "files": [
                     "src/functions.php"
-                ]
+                ],
+                "psr-4": {
+                    "Pipeline\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -5089,12 +5089,12 @@
             },
             "type": "library",
             "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\String\\": ""
-                },
                 "files": [
                     "Resources/functions.php"
                 ],
+                "psr-4": {
+                    "Symfony\\Component\\String\\": ""
+                },
                 "exclude-from-classmap": [
                     "/Tests/"
                 ]
@@ -5449,7 +5449,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^8.0"
+        "php": "^8.1"
     },
     "platform-dev": [],
     "plugin-api-version": "2.2.0"
