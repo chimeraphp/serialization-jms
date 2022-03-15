@@ -8,17 +8,19 @@ use Chimera\Input;
 
 final class FakeInput implements Input
 {
-    /** @var mixed[] */
-    private array $attributes = [];
+    /** @var array<string, mixed> */
+    private readonly array $attributes;
 
     /** @param mixed[] $data */
-    public function __construct(private array $data, ?string $generatedId = null)
+    public function __construct(private readonly array $data, ?string $generatedId = null)
     {
-        if ($generatedId === null) {
-            return;
+        $attributes = [];
+
+        if ($generatedId !== null) {
+            $attributes[IdentifierGenerator::class] = $generatedId;
         }
 
-        $this->attributes[IdentifierGenerator::class] = $generatedId;
+        $this->attributes = $attributes;
     }
 
     public function getAttribute(string $name, mixed $default = null): mixed

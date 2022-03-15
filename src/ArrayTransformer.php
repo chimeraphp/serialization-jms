@@ -10,8 +10,10 @@ use JMS\Serializer\ArrayTransformerInterface;
 
 final class ArrayTransformer implements MessageCreator
 {
-    public function __construct(private ArrayTransformerInterface $transformer, private InputExtractor $extractor)
-    {
+    public function __construct(
+        private readonly ArrayTransformerInterface $transformer,
+        private readonly InputExtractor $extractor,
+    ) {
     }
 
     public function create(string $message, Input $input): object
