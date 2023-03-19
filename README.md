@@ -4,7 +4,7 @@
 [![Latest Stable Version]](https://packagist.org/packages/chimera/serialization-jms)
 [![Unstable Version]](https://packagist.org/packages/chimera/serialization-jms)
 
-[![Build Status]](https://github.com/chimeraphp/serialization-jms/actions?query=workflow%3A%22PHPUnit%20Tests%22+branch%3A0.5.x)
+[![Build Status]](https://github.com/chimeraphp/serialization-jms/actions?query=workflow%3A%22PHPUnit%20Tests%22+branch%3A1.0.x)
 [![Code Coverage]](https://codecov.io/gh/chimeraphp/serialization-jms)
 
 > The term Chimera (_/kɪˈmɪərə/_ or _/kaɪˈmɪərə/_) has come to describe any
@@ -84,7 +84,7 @@ MIT, see [LICENSE].
 [Total Downloads]: https://img.shields.io/packagist/dt/chimera/serialization-jms.svg?style=flat-square
 [Latest Stable Version]: https://img.shields.io/packagist/v/chimera/serialization-jms.svg?style=flat-square
 [Unstable Version]: https://img.shields.io/packagist/vpre/chimera/serialization-jms.svg?style=flat-square
-[Build Status]: https://img.shields.io/github/workflow/status/chimeraphp/serialization-jms/PHPUnit%20tests/master?style=flat-square
+[Build Status]: https://img.shields.io/github/actions/workflow/status/chimeraphp/serialization-jms/phpunit.yml?branch=1.0.x&style=flat-square
 [Code Coverage]: https://codecov.io/gh/chimeraphp/serialization-jms/branch/0.5.x/graph/badge.svg
 [Packagist]: http://packagist.org/packages/chimera/serialization-jms
 [Composer]: http://getcomposer.org
