@@ -7,12 +7,13 @@ use Chimera\MessageCreator\InputExtractor\AppendGeneratedIdentifier;
 use Chimera\MessageCreator\InputExtractor\UseInputData;
 use Chimera\MessageCreator\JmsSerializer\ArrayTransformer;
 use JMS\Serializer\SerializerBuilder;
+use PHPUnit\Framework\Attributes as PHPUnit;
 use PHPUnit\Framework\TestCase;
 
-/** @covers \Chimera\MessageCreator\JmsSerializer\ArrayTransformer */
+#[PHPUnit\CoversClass(ArrayTransformer::class)]
 final class MessageDeserializationTest extends TestCase
 {
-    /** @test */
+    #[PHPUnit\Test]
     public function inputDataShouldBeUsedOnDeserialization(): void
     {
         $message = $this->createMessage(['foo' => 'one', 'bar' => 'two', 'baz' => 'three']);
@@ -23,7 +24,7 @@ final class MessageDeserializationTest extends TestCase
         self::assertSame('three', $message->baz);
     }
 
-    /** @test */
+    #[PHPUnit\Test]
     public function generatedIdShouldBeUsedOnDeserialization(): void
     {
         $message = $this->createMessage([], '1234');
@@ -32,7 +33,7 @@ final class MessageDeserializationTest extends TestCase
         self::assertFalse(isset($message->foo, $message->bar, $message->baz));
     }
 
-    /** @test */
+    #[PHPUnit\Test]
     public function dataAndIdShouldBeUsedOnDeserialization(): void
     {
         $message = $this->createMessage(['foo' => 'one', 'bar' => 'two', 'baz' => 'three'], '1234');

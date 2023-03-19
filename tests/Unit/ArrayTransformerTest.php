@@ -7,18 +7,14 @@ use Chimera\Input;
 use Chimera\MessageCreator\InputExtractor\UseInputData;
 use Chimera\MessageCreator\JmsSerializer\ArrayTransformer;
 use JMS\Serializer\ArrayTransformerInterface;
+use PHPUnit\Framework\Attributes as PHPUnit;
 use PHPUnit\Framework\TestCase;
 use stdClass;
 
-/** @coversDefaultClass \Chimera\MessageCreator\JmsSerializer\ArrayTransformer */
+#[PHPUnit\CoversClass(ArrayTransformer::class)]
 final class ArrayTransformerTest extends TestCase
 {
-    /**
-     * @test
-     *
-     * @covers ::__construct()
-     * @covers ::create()
-     */
+    #[PHPUnit\Test]
     public function createShouldReturnANewInstanceOfGivenMessageUsingTheInputData(): void
     {
         $input       = $this->createMock(Input::class);
